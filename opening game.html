@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Catching Pokemon</title>
+    <style>
+        body {
+            background-image: url("pikadance2.gif");
+            background-size: 80px;
+            background-color: yellow;
+            animation-name: anim;
+            animation-duration: 10s;
+        }
+        #main {
+            height: 500px;
+            width: cover;
+            /* background-color: turquoise; */
+            display: flex;
+            justify-content: center;
+        }
+        #med {
+            height: 500px;
+            width: 1000px;
+            /* background-color: tomato; */
+           
+        }
+        #unit {
+            height: 400px;
+            width: 1000px;
+            background-color: white;
+            background-image: url("brock.png"), url("ash2.png"), url("misty4.jpg");
+            background-size: 300px, 450px, 275px;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position-x: 0px, 280px, 700px;
+            background-position-y: 0px, 0px, 50px;
+            border: 3px solid yellow;
+            animation-name: anime;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            display: flex;
+            justify-content: center;
+        }
+        #boxtext {
+            height: 40px;
+            width: 400px;
+            background-color: yellow;
+            border: 6px solid rgb(5, 94, 153);
+            border-radius: 30px;
+            margin-top: 300px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            animation-name: banner;
+            animation-duration: 8s;
+            animation-timing-function: linear;
+           
+        }
+       
+        #pokel {
+            height: 200px;
+            width: 1000px;
+            background-color:rgb(5, 94, 153);
+            background-image: url("pokego.png");
+            background-size: 400px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-position-y: 420px;
+            border: 3px solid yellow;
+            display: flex;
+            justify-content: space-between;
+        }
+        #secondmain {
+            height: 150px;
+            width: cover;
+            /* background-color: chocolate; */
+            display: flex;
+            justify-content: center;
+        }
+        #word {          
+            font-family: fontul;
+            font-size: 50px;
+            color: yellow;
+            text-shadow: 10px 5px rgb(3, 47, 77);
+            margin-top: -145px;
+            /* background-color: yellowgreen; */           
+        }
+        #but01, #but02 {
+            height: 180px;
+            width: 120px;
+            /* display: flex;
+            justify-content: center; */
+            margin-top: -80px;
+            font-family: fontul;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #but01 {
+            margin-left: 10px;
+        }
+        #but02 {
+            margin-right: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: yellow;
+        }
+        a:hover{
+            color: rgb(5, 94, 153);
+        }
+        #play:hover{
+            color: yellow;
+        }
+        #credit {
+            height: 100px;
+            width: cover;
+            background-color: red;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 30px;
+            font-family:fontul;
+            color: whitesmoke;
+        }
+        @font-face {
+            font-family: fontul;
+            src: url(Pokemon\ Solid.ttf);
+        }
+
+        @keyframes anime {
+            0% {background-position-x: -700px, -420px, -200px;}
+            50% {background-position-x: -700px, -420px, 700px;}
+            75% {background-position-x: -700px, 280px, 700px;}
+            100% {background-position-x: 0px, 280px, 700px;}
+        }
+
+        @keyframes banner {
+            0% {margin-top: -100px;}           
+            50% {margin-top: -100px;}           
+            100% {margin-top: 300px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="med">
+            <div id="unit">
+                <div id="boxtext">
+                    COLLECT ALL POKEMONS <br> AND ENJOY THE GAME
+                </div>
+            </div>
+            <div id="pokel">
+                <div id="but01" onclick="play()">
+                    The Pokeballs
+                    <br>
+                    <img src="great ball.png" alt="" style="width: 50px; height: 50px;">
+                    <img src="ultraball.png" alt="" style="width: 50px; height: 50px;">
+                    <img src="masterball.png" alt="" style="width: 55px; height: 55px;">
+                    <div id="re" style="margin-top: -20px;">
+                        <a href=""></a>
+                    </div>          
+                </div>
+                <div id="but02">
+                    <a href="gamenext Lev1.html"> PLAY</span></a>
+                    <br>
+                    <a href="gamenext Lev1.html"> LEVEL 1 </a>
+                    <br>
+                    <a href="gamenext Lev2.html">LEVEL 2</a>
+                    <br>
+                    <a href="gamenext Lev3.html">LEVEL 3</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="secondmain">        
+        <div id="word">GAME : CATCHING</div>        
+    </div>
+
+    <div id="credit">Fajar Sidique's Game</div>
+
+
+    <script>
+        let victor1 = 0
+        function play(){
+            location.href = "gamenext.html";
+        }  
+
+        localStorage.getItem("point1")
+    </script>
+</body>
+</html>

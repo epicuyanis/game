@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATCHING POKEMON</title>
+    <style>
+        body{
+            background-image: url("ash.jpg"), url("brock.png");
+            background-repeat: no-repeat, no-repeat;
+            background-size: 260px, 300px;
+            background-position-y: 430px, 400px;
+            background-position-x: 800px, 300px;
+            overflow: hidden;
+        }
+        #Themain {
+            height: 500px;
+            width: cover;
+            /* background-color: blue; */
+        }
+        #sky {
+            height: 400px;
+            width: cover;
+            background-color: lightblue;
+            display: flex;
+            justify-content: space-around;
+            background-image: url("field2.jpg");
+            background-size: 1400px;
+            background-position-y: -200px;
+            transition-duration: 2s;
+        }
+        #main {
+            height: 100px;
+            width: cover;
+            /* background-color: pink; */
+            z-index: 9999;
+        }
+        #hero {
+            height: 100px;
+            width: 100px;
+            /* background-color: yellow; */
+            background-image: url("pokeball.png");
+            background-size: 100px;
+            transition-duration: .5s;
+            transition-timing-function: linear;
+        }
+        #butts {
+            height: 150px;
+            width: cover;
+            /* background-color: green; */           
+            margin-top: -100px;            
+        }
+        button {
+            height: 50px;
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+            margin: 5px;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            background-image: url("pokeball.png");
+            background-size: 46px;
+            background-repeat: no-repeat;
+        }
+        #catch {
+            font-size: 10px;
+            font-weight: bold;
+        }
+        #butts2 {
+            height: 30px;
+            width: cover;
+            display: flex;
+            justify-content: space-between;
+            margin-top: -60px;
+        }
+        #start {
+            height: 30px;
+            width: 70px;
+            border-radius: 0%;
+            margin: 15px;
+            font-size: 13px;
+        }
+        #result {
+            height: 30px;
+            width: 70px;
+            border-radius: 0%;
+            margin: 10px;
+            font-size: 13px;
+            /* margin-left: 1250px; */
+        }
+        #poke1, #poke2, #poke3,  #poke4 {
+            height: 100px;
+            width: 100px;
+            transition: 2s;
+            opacity: 0;
+            /* background-color: green; */
+            /* margin-top: 200px; */
+        }
+        #poke1 {
+            background-image: url("SQUIRTLE.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            margin-top: 200px;
+        }
+        #poke2 {
+            background-image: url("bulba.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            margin-top: 300px;
+        }
+        #poke3 {
+            background-image: url("chameleon.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            margin-top: 150px;
+        }
+        #poke4 {
+            background-image: url("kitty.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            margin-top: 50px;
+        }
+        #name {
+            height: 50px;
+            width: cover;
+            display: flex;
+            justify-content: center;
+        }
+        #game {
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            margin-top: 55px;
+        }
+        #pockets {
+            height: 200px;
+            width: cover;
+            /* background-color: blueviolet; */
+            margin-top: -20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #pokedeck {
+            height: 200px;
+            width: 400px;
+            /* background-color: green; */
+            
+        }
+        #first, #second, #third, #fourth {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: white;
+            background-image: url("pokeball.png");
+            background-size: 50px;
+            background-position: center;
+            background-repeat: no-repeat;
+            float: left;
+            border: 3px solid black;
+        }
+
+        #reward {
+            background-color: burlywood;
+            height: 100px;
+            width: cover;
+            display: flex;
+            justify-content: end;
+        }
+        #rewardball {
+            /* background-color: red; */
+            height: 100px;
+            width: 100px;
+            margin-top: -350px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-image: url("great\ ball.png");
+            background-size: 50px;
+            background-position: center;
+            background-position-y: 40px;
+            background-repeat: no-repeat;
+        }
+
+        #next{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 13px;
+            height: 20px;
+            width: 60px;
+            border: 2px solid black;
+            text-decoration: none;
+            text-align: center;
+            margin-top: -200px;
+            margin-right: -87px;
+            font-size: 20px;
+            color: black;
+            opacity: 0;
+            
+        }
+        #next:hover{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="Themain">
+        <div id="sky">
+            <div id="poke1"></div>
+            <div id="poke2"></div>
+            <div id="poke3"></div>
+            <div id="poke4"></div>
+        </div>
+        <div id="main">
+            <div id="hero"></div>
+        </div>
+    </div>
+
+    <div id="butts">
+        <div style="width: cover; display: flex; justify-content: center; ">
+            <button id="up" onclick="up()">^</button>
+        </div>
+
+        <div  style="display: flex; justify-content: center; width: cover; ">
+            <button id="left" onclick="left()"><</button>
+            <button id="catch" onclick="tangkap()">CATCH</button>
+            <button id="right" onclick="right()">></button>
+        </div>
+        
+        <div style="width: cover; display: flex; justify-content: center; ">
+            <button id="down" onclick="down()">˅</button>
+        </div>       
+    </div>
+    <div id="butts2">
+        <button id="start" onclick="begin()">START</button>
+        <button id="result" onclick="result()">RESULT</button>
+    </div>
+    
+    <div id="name">
+        <div id="game">LEVEL 1</div>
+    </div>
+
+    <div id="pockets">
+        Your Pokemons :
+         <div id="pokedeck">           
+             <div id="first"></div>
+             <div id="second"></div>
+             <div id="third"></div>
+             <div id="fourth"></div>
+         </div>
+     </div>
+
+     <div id="reward">        
+        <div id="next">
+            <a style="text-decoration: none; color: black;" href="gamenext Lev2.html">NEXT</a>
+        </div>
+        <div id="rewardball">The Reward</div>
+     </div>
+
+    <script>
+        function begin(){
+            document.getElementById("game").style.color = "red"
+            document.getElementById("poke1").style.opacity = "1"
+            document.getElementById("poke2").style.opacity = "1"
+            document.getElementById("poke3").style.opacity = "1"
+            document.getElementById("poke4").style.opacity = "1"
+           
+        }
+
+        let move = 0
+        let fly = 0
+        let poke1 = 0
+        let poke2 = 0
+        let poke3 = 0
+        let poke4 = 0
+        let victor1 = 0
+        function left(){
+            move -= 20
+            document.getElementById("hero").style.marginLeft = move + "px"
+            console.log(move)
+            return move
+        }
+        function right(){
+            move += 20
+            document.getElementById("hero").style.marginLeft = move + "px"
+            console.log(move)
+            return move
+        }
+        function up(){
+            fly -= 20
+            document.getElementById("hero").style.marginTop = fly + "px"
+            console.log(fly)
+            return fly
+        }
+        function down(){
+            fly += 20
+            document.getElementById("hero").style.marginTop = fly + "px"
+            console.log(fly)
+            return fly
+        }
+        function tangkap(){
+            //tangkap squirtle
+            if(move == 100 && fly === -200){
+                document.getElementById("poke1").style.opacity = 0
+                document.getElementById("poke1").style.backgroundSize = "20px"
+                document.getElementById("poke1").style.backgroundPosition = "center"
+                document.getElementById("first").style.backgroundImage = "url('SQUIRTLE.png')"
+                document.getElementById("first").style.backgroundSize = "30px"
+                poke1 = 1
+            }
+            //tangkap bulbasaur
+            if(move == 440 && fly === -120){
+                document.getElementById("poke2").style.opacity = 0
+                document.getElementById("poke2").style.backgroundSize = "20px"
+                document.getElementById("poke2").style.backgroundPosition = "center"
+                document.getElementById("second").style.backgroundImage = "url('bulba.png')"
+                document.getElementById("second").style.backgroundSize = "40px"
+                poke2 = 1
+            }
+            //tangkap charmander
+            if(move == 780 && fly === -260){
+                document.getElementById("poke3").style.opacity = 0
+                document.getElementById("poke3").style.backgroundSize = "20px"
+                document.getElementById("poke3").style.backgroundPosition = "center"
+                document.getElementById("third").style.backgroundImage = "url('chameleon.png')"
+                document.getElementById("third").style.backgroundSize = "40px"
+                poke3 = 1
+            }
+            //tangkap kitty
+            if(move == 1120 && fly === -340){
+                document.getElementById("poke4").style.opacity = 0
+                document.getElementById("poke4").style.backgroundSize = "20px"
+                document.getElementById("poke4").style.backgroundPosition = "center"
+                document.getElementById("fourth").style.backgroundImage = "url('kitty.png')"
+                document.getElementById("fourth").style.backgroundSize = "40px"
+                poke4 = 1
+            }
+
+            return poke1 
+            return poke2 
+            return poke3 
+            return poke4 
+        }
+
+        function result() {
+            towin = poke1 + poke2 + poke3 + poke4
+            if(towin == 4) {
+                    document.getElementById("sky").style.backgroundImage = "url('winn.jpg')"
+                    document.getElementById("sky").style.backgroundSize = "450px"
+                    document.getElementById("sky").style.backgroundPositionY = "0px"
+                    victor1 = 1
+
+                    document.getElementById("rewardball").innerHTML = "you got great ball" 
+                    document.getElementById("next").style.opacity = 1 
+                }
+            return victor1
+        }       
+
+        localStorage.setItem("point1",victor1)
+    </script>
+</body>
+</html>
